@@ -13,7 +13,11 @@ connection();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://icy-flower-0886ca21e.5.azurestaticapps.net',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
+}));
 
 // routes
 app.use("/api/auth", authRoutes);
